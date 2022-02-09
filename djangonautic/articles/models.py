@@ -9,3 +9,10 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def snippet(self):
+        max_length = 50
+        if len(self.body) > max_length:
+            return self.body[:max_length] + "..."
+
+        return self.body
