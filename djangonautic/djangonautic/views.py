@@ -1,10 +1,9 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
-def homepage(request):
+def homepage_view(request):
     return render(request, 'homepage.html')
 
 
-def about(request):
+def about_view(request):
     return render(request, 'about.html')
