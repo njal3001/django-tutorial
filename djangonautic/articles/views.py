@@ -23,6 +23,9 @@ def article_create_view(request):
 
         if form.is_valid():
             # TODO: Save article to database
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
             return redirect('articles:list')
     else:
         form = forms.CreateArticle()
